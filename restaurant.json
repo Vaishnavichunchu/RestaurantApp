@@ -1,0 +1,142 @@
+[
+    {
+        "_id": "1",
+        "name": "Golden Dragon",
+        "address": "101 Main Street",
+        "city": "London",
+        "type_of_food": "Chinese"
+    },
+    {
+        "_id": "2",
+        "name": "Spice Symphony",
+        "address": "202 Elm Avenue",
+        "city": "New York",
+        "type_of_food": "Indian"
+    },
+    {
+        "_id": "3",
+        "name": "Sushi Zen",
+        "address": "303 Ocean Drive",
+        "city": "Tokyo",
+        "type_of_food": "Japanese"
+    },
+    {
+        "_id": "4",
+        "name": "Le Petit Bistro",
+        "address": "404 Market Square",
+        "city": "Paris",
+        "type_of_food": "French"
+    },
+    {
+        "_id": "5",
+        "name": "Bella Italia",
+        "address": "505 High Street",
+        "city": "Rome",
+        "type_of_food": "Italian"
+    },
+    {
+        "_id": "6",
+        "name": "Taco Fiesta",
+        "address": "606 South Road",
+        "city": "Mexico City",
+        "type_of_food": "Mexican"
+    },
+    {
+        "_id": "7",
+        "name": "Kebab Palace",
+        "address": "707 Central Plaza",
+        "city": "Istanbul",
+        "type_of_food": "Turkish"
+    },
+    {
+        "_id": "8",
+        "name": "Dragon's Delight",
+        "address": "808 Dragon Lane",
+        "city": "Shanghai",
+        "type_of_food": "Chinese"
+    },
+    {
+        "_id": "9",
+        "name": "Curry Corner",
+        "address": "909 Spice Road",
+        "city": "Mumbai",
+        "type_of_food": "Indian"
+    },
+    {
+        "_id": "10",
+        "name": "Tokyo Ramen",
+        "address": "1010 Noodle Street",
+        "city": "Tokyo",
+        "type_of_food": "Japanese"
+    },
+    {
+        "_id": "11",
+        "name": "Parisian Cafe",
+        "address": "1111 Eiffel Blvd",
+        "city": "Paris",
+        "type_of_food": "French"
+    },
+    {
+        "_id": "12",
+        "name": "Pasta Paradise",
+        "address": "1212 Roma Lane",
+        "city": "Rome",
+        "type_of_food": "Italian"
+    },
+    {
+        "_id": "13",
+        "name": "Mexicana Grill",
+        "address": "1313 Burrito Blvd",
+        "city": "Mexico City",
+        "type_of_food": "Mexican"
+    },
+    {
+        "_id": "14",
+        "name": "Mediterranean Magic",
+        "address": "1414 Olive Way",
+        "city": "Athens",
+        "type_of_food": "Mediterranean"
+    },
+    {
+        "_id": "15",
+        "name": "Berlin Bratwurst",
+        "address": "1515 Wurst Lane",
+        "city": "Berlin",
+        "type_of_food": "German"
+    },
+    {
+        "_id": "16",
+        "name": "Seoul Food",
+        "address": "1616 Kimchi Avenue",
+        "city": "Seoul",
+        "type_of_food": "Korean"
+    },
+    {
+        "_id": "17",
+        "name": "Bangkok Bites",
+        "address": "1717 Pad Thai Road",
+        "city": "Bangkok",
+        "type_of_food": "Thai"
+    },
+    {
+        "_id": "18",
+        "name": "Rio Steakhouse",
+        "address": "1818 Samba Street",
+        "city": "Rio de Janeiro",
+        "type_of_food": "Brazilian"
+    },
+    {
+        "_id": "19",
+        "name": "Sydney Seafood",
+        "address": "1919 Ocean Avenue",
+        "city": "Sydney",
+        "type_of_food": "Seafood"
+    },
+    {
+        "_id": "20",
+        "name": "Cape Town Curry",
+        "address": "2020 Spice Route",
+        "city": "Cape Town",
+        "type_of_food": "South African"
+    }
+]

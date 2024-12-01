@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 20px; }
+        .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input, button { padding: 10px; margin: 5px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background-color: #4CAF50; color: white; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin: 8px 0; padding: 8px; background-color: #f9f9f9; border-left: 5px solid #4CAF50; }
+        .delete-btn { background-color: red; color: white; border: none; cursor: pointer; }
+        .delete-btn:hover { background-color: darkred; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Restaurant Finder</h1>
+        
+        <section>
+            <h2>Add or Update a Restaurant</h2>
+            <input type="text" id="docId" placeholder="Document ID">
+            <input type="text" id="docName" placeholder="Restaurant Name">
+            <input type="text" id="docAddress" placeholder="Restaurant Address">
+            <input type="text" id="docCity" placeholder="City">
+            <input type="text" id="docType" placeholder="Type of Food">
+            <button onclick="addOrUpdateDocument()">Submit</button>
+        </section>
+
+        <section>
+            <h2>Search Restaurants</h2>
+            <input type="text" id="searchQuery" placeholder="Search...">
+            <button onclick="searchDocuments()">Search</button>
+            <ul id="searchResults"></ul>
+        </section>
+    </div>
+
+    <script>
+        function addOrUpdateDocument() {
+            const docId = document.getElementById('docId').value;
+            const name = document.getElementById('docName').value;
+            const address = document.getElementById('docAddress').value;
+            const city = document.getElementById('docCity').value;
+            const type = document.getElementById('docType').value;
+
+            fetch(`/document/${docId}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, address, city, type_of_food: type })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Document submitted: ' + JSON.stringify(data));
+                searchDocuments();  // Refresh the list
+            })
+            .catch(error => alert('Error submitting document: ' + error));
+        }
+
+        function searchDocuments() {
+            const query = document.getElementById('searchQuery').value;
+            fetch(`/search?q=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    const resultsElement = document.getElementById('searchResults');
+                    resultsElement.innerHTML = '';  // Clear previous results
+                    data.forEach(doc => {
+                        const item = document.createElement('li');
+                        item.innerHTML = `
+                            Name: ${doc.name}, Address: ${doc.address}, City: ${doc.city}, Type: ${doc.type_of_food} 
+                            <button class='delete-btn' onclick='deleteDocument("${doc._id}")'>Delete</button>`;
+                        resultsElement.appendChild(item);
+                    });
+                })
+                .catch(error => alert('Error fetching search results: ' + error));
+        }
+
+        function deleteDocument(docId) {
+            fetch(`/document/${docId}`, { method: 'DELETE' })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);  // Display success message
+                    searchDocuments(); // Refresh the list after deletion
+                })
+                .catch(error => alert('Error deleting document: ' + error));
+        }
+    </script>
+</body>
+</html>

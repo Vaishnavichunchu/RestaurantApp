@@ -1,4 +1,3 @@
-Here’s a structured **README.md** that provides detailed instructions on how to execute your Restaurant Finder project. You can copy and modify this template as needed:
 
 ---
 
@@ -129,5 +128,7 @@ curl.exe -X DELETE "http://localhost:9200/restaurants" -u elastic:your_password
   Run the terminal as Administrator.
 
 ---
-
-You can copy this content to your `README.md` file and make modifications based on your preferences.
+Notes
+Ensure the HTML and JSON file paths in extra.py match their actual locations on your system.
+Always restart Elasticsearch if you encounter connection issues.
+For changes in the dataset, update the JSON file and reinitialize using the /initialize endpoint.

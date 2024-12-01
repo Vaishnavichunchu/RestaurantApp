@@ -1,9 +1,12 @@
+Here’s a structured **README.md** that provides detailed instructions on how to execute your Restaurant Finder project. You can copy and modify this template as needed:
 
+---
 
 # Restaurant Finder
 
 This project is a Flask-based web application that allows users to add, update, search, and delete restaurant entries stored in an Elasticsearch database. The application uses HTML for the front-end and Python for the back-end.
 
+---
 
 ## Prerequisites
 
@@ -15,51 +18,54 @@ This project is a Flask-based web application that allows users to add, update, 
 4. **cURL**: Command-line tool for HTTP requests.
 5. **Git**: To clone the repository.
 
+---
 
 ## Installation Steps
 
 1. Clone the repository:
-   bash
+   ```bash
    git clone https://github.com/Vaishnavichunchu/RestaurantApp.git
    cd RestaurantApp
-   
+   ```
 
 2. Install the required Python libraries:
-   bash
+   ```bash
    pip install -r requirements.txt
-   
+   ```
 
 3. Download and set up Elasticsearch:
-   Start Elasticsearch by navigating to the `bin` directory and running:
-     bash
+   - Start Elasticsearch by navigating to the `bin` directory and running:
+     ```bash
      ./elasticsearch.bat  # Windows
      ./bin/elasticsearch  # Linux/MacOS
-     
-    Ensure Elasticsearch is running on `http://localhost:9200`.
+     ```
+   - Ensure Elasticsearch is running on `http://localhost:9200`.
 
 4. Update the Elasticsearch credentials in `extra.py`:
-   Replace the username and password in the following line:
-     python
+   - Replace the username and password in the following line:
+     ```python
      es = Elasticsearch(
          [{'host': 'localhost', 'port': 9200, 'scheme': 'https'}],
          http_auth=('elastic', 'your_password'),
          verify_certs=False
      )
-     
+     ```
 
 5. Run the Flask application:
-   bash
+   ```bash
    python extra.py
-   
+   ```
+
+---
 
 ## How to Use
 
 1. **Initialize the Index**:
-    Open your terminal and execute:
-     bash
+   - Open your terminal and execute:
+     ```bash
      curl.exe -X GET "http://localhost:5000/initialize"
-     
-   This initializes the Elasticsearch index and loads data from `restaurant.json`.
+     ```
+   - This initializes the Elasticsearch index and loads data from `restaurant.json`.
 
 2. **Access the Web Application**:
    - Open your browser and navigate to:
